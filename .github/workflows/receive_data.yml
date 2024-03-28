@@ -1,0 +1,16 @@
+name: Receive Data
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  process_data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Execute script
+        run: php receive_data.php
